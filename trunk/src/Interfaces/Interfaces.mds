@@ -1,0 +1,16 @@
+<Combine name="Interfaces" fileversion="2.0">
+  <Configurations active="Debug">
+    <Configuration name="Debug" ctype="CombineConfiguration">
+      <Entry configuration="Debug" build="True" name="Interfaces" />
+    </Configuration>
+    <Configuration name="Release" ctype="CombineConfiguration">
+      <Entry configuration="Debug" build="True" name="Interfaces" />
+    </Configuration>
+  </Configurations>
+  <StartMode startupentry="Interfaces" single="True">
+    <Execute type="None" entry="Interfaces" />
+  </StartMode>
+  <Entries>
+    <Entry filename="./Interfaces.mdp" />
+  </Entries>
+</Combine>

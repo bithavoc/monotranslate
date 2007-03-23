@@ -1,0 +1,28 @@
+<Combine name="Translator" fileversion="2.0" outputpath="./build/bin/">
+  <Configurations active="Release">
+    <Configuration name="Debug" ctype="CombineConfiguration">
+      <Entry configuration="Debug" build="True" name="Translator" />
+      <Entry configuration="Debug" build="True" name="MonoTranslate" />
+      <Entry configuration="Debug" build="True" name="Interfaces" />
+      <Entry configuration="Debug" build="True" name="Engine" />
+    </Configuration>
+    <Configuration name="Release" ctype="CombineConfiguration">
+      <Entry configuration="Debug" build="True" name="Translator" />
+      <Entry configuration="Debug" build="True" name="MonoTranslate" />
+      <Entry configuration="Debug" build="True" name="Interfaces" />
+      <Entry configuration="Debug" build="True" name="Engine" />
+    </Configuration>
+  </Configurations>
+  <StartMode startupentry="MonoTranslate" single="True">
+    <Execute type="None" entry="Translator" />
+    <Execute type="None" entry="MonoTranslate" />
+    <Execute type="None" entry="Interfaces" />
+    <Execute type="None" entry="Engine" />
+  </StartMode>
+  <Entries>
+    <Entry filename="./Translator.mdp" />
+    <Entry filename="../MonoTranslate/MonoTranslate.mdp" />
+    <Entry filename="../Interfaces/Interfaces.mdp" />
+    <Entry filename="../Engine/Engine.mdp" />
+  </Entries>
+</Combine>
