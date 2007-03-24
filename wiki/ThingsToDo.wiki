@@ -1,15 +1,15 @@
 #summary One-sentence summary of this page.
+#labels Phase-Requirements
 
 Deployment:
- * *.deb* Deployment Package
- * *.rpm* Deployment Package
- * Windows Installer or Nullsoft Installer
+ * *.deb* Deployment Package (High,thepumpkin1979)
+ * *.rpm* Deployment Package (High,jabitoju)
+ * Windows Installer or Nullsoft Installer (High,jabitoju)
 
 Development:
- * Windows Notify Icon
- * GTK# Notify Icon
- * Strong-Name Libraries
-
+ * Windows Notify Icon (High,jabitoju)
+ * GTK# Notify Icon (High,thepumpkin1979)
+ * Strong-Name Libraries (High,thepumpkin1979)
 
 
 
