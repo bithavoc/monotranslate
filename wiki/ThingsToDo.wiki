@@ -10,6 +10,5 @@ Development:
  * Windows Notify Icon (High,gabitoju)
  * GTK# Notify Icon (High,thepumpkin1979)
  * Strong-Name Libraries (High,thepumpkin1979)
- * Transfor the Translator into [Plug-ins], so anyone can write one and add it to the app (gabitoju)
-
+ * Transfor the Translator into [PlugIns], so anyone can write one and add it to the app (gabitoju)
 
