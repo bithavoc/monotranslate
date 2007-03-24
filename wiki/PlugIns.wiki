@@ -1,0 +1,4 @@
+One thing to do i conver the translator into plug-ins, so any user (with the aproiate knoledege) can write a translator wraper and add it to he app.
+This is going to be acompliseh using refelction and xml configuration files.
+
+This page it's going to contain informarion about how to write a translator.
