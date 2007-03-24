@@ -1,5 +1,16 @@
 #summary One-sentence summary of this page.
-Things to do to the application
+
+Deployment:
+ * *.deb* Deployment Package
+ * *.rpm* Deployment Package
+ * Windows Installer or Nullsoft Installer
+
+Development:
+ * Windows Notify Icon
+ * GTK# Notify Icon
+ * Strong-Name Libraries
+
+
 
 
 
