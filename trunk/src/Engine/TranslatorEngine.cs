@@ -31,10 +31,18 @@ namespace MonoTranslate.Engine
 	{
 	
 		private IDictionary langpairs;
-	
+		private string configFile;
+
 		public TranslatorEngine()
 		{
 			langpairs = new Hashtable();
+			LoadLangPairs();
+		}	
+			
+		public TranslatorEngine(string confFile)
+		{
+			langpairs = new Hashtable();
+			configFile = confFile;
 			LoadLangPairs();
 		}
 		
@@ -69,10 +77,20 @@ namespace MonoTranslate.Engine
 			return ret;
 		}
 		
+		public void SetConfigFile(string confFile)
+		{
+			configFile = confFile;
+		}
+
+		public string GetConfigFile()
+		{
+			return configFile;
+		}		
+						
 		private void LoadLangPairs()
 		{
 			XmlDocument doc = new XmlDocument();
-			doc.Load("config.xml");
+			doc.Load(GetConfigFile());
 			
 			XmlNodeList nodeList = doc.SelectNodes("configuration/translator");
 			IEnumerator nodeEnum = nodeList.GetEnumerator();
