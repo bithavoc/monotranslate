@@ -29,7 +29,7 @@ public class MainClass
 {
 	public static void Main(string[] args)
 	{
-		TranslatorEngine t = new TranslatorEngine();
+		TranslatorEngine t = new TranslatorEngine("config.xml");
 		Application.Run(new MainWindow(t));		
 	}
 }
