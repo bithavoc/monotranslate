@@ -86,9 +86,16 @@ namespace MonoTranslate.Engine
 		{
 			return configFile;
 		}		
+		
+		void checkConfigFile()
+		{
+			if(string.IsNullOrEmpty(GetConfigFile()))
+				throw new System.NullReferenceException("The Engine Configuration file is empty or null");
+		}
 						
 		private void LoadLangPairs()
 		{
+			checkConfigFile();
 			XmlDocument doc = new XmlDocument();
 			doc.Load(GetConfigFile());
 			

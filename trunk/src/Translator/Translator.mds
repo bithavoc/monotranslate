@@ -15,7 +15,7 @@
       <Entry build="True" name="MonoTranslateGtk" configuration="Release" />
     </Configuration>
   </Configurations>
-  <StartMode startupentry="MonoTranslate" single="True">
+  <StartMode startupentry="MonoTranslateGtk" single="True">
     <Execute type="None" entry="Translator" />
     <Execute type="None" entry="MonoTranslate" />
     <Execute type="None" entry="Interfaces" />
