@@ -1,5 +1,0 @@
-#summary MonoTranslate User Guid
-
-= Introduction =
-
-Add your the user guid content here.
