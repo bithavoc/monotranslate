@@ -90,24 +90,20 @@ namespace MonoTranslateGtk {
             w2.Add(this.OnlineUserGuide, null);
             w1.InsertActionGroup(w2, 0);
             this.AddAccelGroup(w1.AccelGroup);
-            this.Events = ((Gdk.EventMask)(0));
             this.Name = "MonoTranslateGtk.AppWindow";
             this.Title = Mono.Unix.Catalog.GetString("Mono Translate");
             this.WindowPosition = ((Gtk.WindowPosition)(4));
             // Container child MonoTranslateGtk.AppWindow.Gtk.Container+ContainerChild
             this.vpaned1 = new Gtk.VPaned();
             this.vpaned1.CanFocus = true;
-            this.vpaned1.Events = ((Gdk.EventMask)(0));
             this.vpaned1.Name = "vpaned1";
             this.vpaned1.Position = 172;
             // Container child vpaned1.Gtk.Paned+PanedChild
             this.vbox1 = new Gtk.VBox();
-            this.vbox1.Events = ((Gdk.EventMask)(0));
             this.vbox1.Name = "vbox1";
             // Container child vbox1.Gtk.Box+BoxChild
             w1.AddUiFromString("<ui><menubar name='menubar21'><menu action='miApplication'><menuitem action='Close'/></menu><menu action='Help'><menuitem action='OnlineUserGuide'/><menuitem action='miAbout'/></menu></menubar></ui>");
             this.menubar21 = ((Gtk.MenuBar)(w1.GetWidget("/menubar21")));
-            this.menubar21.Events = ((Gdk.EventMask)(0));
             this.menubar21.Name = "menubar21";
             this.vbox1.Add(this.menubar21);
             Gtk.Box.BoxChild w3 = ((Gtk.Box.BoxChild)(this.vbox1[this.menubar21]));
@@ -117,7 +113,6 @@ namespace MonoTranslateGtk {
             // Container child vbox1.Gtk.Box+BoxChild
             w1.AddUiFromString("<ui><toolbar name='toolbar1'><toolitem action='close'/><separator/><toolitem action='tbtnTranslate'/></toolbar></ui>");
             this.toolbar1 = ((Gtk.Toolbar)(w1.GetWidget("/toolbar1")));
-            this.toolbar1.Events = ((Gdk.EventMask)(0));
             this.toolbar1.Name = "toolbar1";
             this.toolbar1.ShowArrow = false;
             this.vbox1.Add(this.toolbar1);
@@ -127,11 +122,9 @@ namespace MonoTranslateGtk {
             w4.Fill = false;
             // Container child vbox1.Gtk.Box+BoxChild
             this.hbox2 = new Gtk.HBox();
-            this.hbox2.Events = ((Gdk.EventMask)(0));
             this.hbox2.Name = "hbox2";
             // Container child hbox2.Gtk.Box+BoxChild
             this.label2 = new Gtk.Label();
-            this.label2.Events = ((Gdk.EventMask)(0));
             this.label2.Name = "label2";
             this.label2.LabelProp = Mono.Unix.Catalog.GetString("Translator:");
             this.hbox2.Add(this.label2);
@@ -144,7 +137,6 @@ namespace MonoTranslateGtk {
             Gtk.Tooltips w6 = new Gtk.Tooltips();
             w6.SetTip(this.cmbTranslators, "Select the Translator Provider", "Select the Translator Provider");
             this.cmbTranslators.CanFocus = true;
-            this.cmbTranslators.Events = ((Gdk.EventMask)(0));
             this.cmbTranslators.Name = "cmbTranslators";
             this.hbox2.Add(this.cmbTranslators);
             Gtk.Box.BoxChild w7 = ((Gtk.Box.BoxChild)(this.hbox2[this.cmbTranslators]));
@@ -156,11 +148,9 @@ namespace MonoTranslateGtk {
             w8.Fill = false;
             // Container child vbox1.Gtk.Box+BoxChild
             this.hbox3 = new Gtk.HBox();
-            this.hbox3.Events = ((Gdk.EventMask)(0));
             this.hbox3.Name = "hbox3";
             // Container child hbox3.Gtk.Box+BoxChild
             this.label4 = new Gtk.Label();
-            this.label4.Events = ((Gdk.EventMask)(0));
             this.label4.Name = "label4";
             this.label4.LabelProp = Mono.Unix.Catalog.GetString("Languaje");
             this.hbox3.Add(this.label4);
@@ -172,7 +162,6 @@ namespace MonoTranslateGtk {
             this.cmbLanguages = Gtk.ComboBoxEntry.NewText();
             w6.SetTip(this.cmbLanguages, "Language", "Language");
             this.cmbLanguages.CanFocus = true;
-            this.cmbLanguages.Events = ((Gdk.EventMask)(0));
             this.cmbLanguages.Name = "cmbLanguages";
             this.hbox3.Add(this.cmbLanguages);
             Gtk.Box.BoxChild w10 = ((Gtk.Box.BoxChild)(this.hbox3[this.cmbLanguages]));
@@ -184,24 +173,20 @@ namespace MonoTranslateGtk {
             w11.Fill = false;
             // Container child vbox1.Gtk.Box+BoxChild
             this.frame1 = new Gtk.Frame();
-            this.frame1.Events = ((Gdk.EventMask)(0));
             this.frame1.Name = "frame1";
             this.frame1.ShadowType = ((Gtk.ShadowType)(0));
             this.frame1.LabelXalign = 0F;
             // Container child frame1.Gtk.Container+ContainerChild
             this.GtkAlignment = new Gtk.Alignment(0F, 0F, 1F, 1F);
-            this.GtkAlignment.Events = ((Gdk.EventMask)(0));
             this.GtkAlignment.Name = "GtkAlignment";
             this.GtkAlignment.LeftPadding = ((uint)(12));
             // Container child GtkAlignment.Gtk.Container+ContainerChild
             this.txtOriginalText = new Gtk.TextView();
             this.txtOriginalText.CanFocus = true;
-            this.txtOriginalText.Events = ((Gdk.EventMask)(0));
             this.txtOriginalText.Name = "txtOriginalText";
             this.GtkAlignment.Add(this.txtOriginalText);
             this.frame1.Add(this.GtkAlignment);
             this.GtkLabel3 = new Gtk.Label();
-            this.GtkLabel3.Events = ((Gdk.EventMask)(0));
             this.GtkLabel3.Name = "GtkLabel3";
             this.GtkLabel3.LabelProp = Mono.Unix.Catalog.GetString("<b>Original Text</b>");
             this.GtkLabel3.UseMarkup = true;
@@ -214,25 +199,21 @@ namespace MonoTranslateGtk {
             w15.Resize = false;
             // Container child vpaned1.Gtk.Paned+PanedChild
             this.frame2 = new Gtk.Frame();
-            this.frame2.Events = ((Gdk.EventMask)(0));
             this.frame2.Name = "frame2";
             this.frame2.ShadowType = ((Gtk.ShadowType)(0));
             this.frame2.LabelXalign = 0F;
             // Container child frame2.Gtk.Container+ContainerChild
             this.GtkAlignment1 = new Gtk.Alignment(0F, 0F, 1F, 1F);
-            this.GtkAlignment1.Events = ((Gdk.EventMask)(0));
             this.GtkAlignment1.Name = "GtkAlignment1";
             this.GtkAlignment1.LeftPadding = ((uint)(12));
             // Container child GtkAlignment1.Gtk.Container+ContainerChild
             this.txtTranslatedText = new Gtk.TextView();
             this.txtTranslatedText.CanFocus = true;
-            this.txtTranslatedText.Events = ((Gdk.EventMask)(0));
             this.txtTranslatedText.Name = "txtTranslatedText";
             this.txtTranslatedText.Editable = false;
             this.GtkAlignment1.Add(this.txtTranslatedText);
             this.frame2.Add(this.GtkAlignment1);
             this.GtkLabel4 = new Gtk.Label();
-            this.GtkLabel4.Events = ((Gdk.EventMask)(0));
             this.GtkLabel4.Name = "GtkLabel4";
             this.GtkLabel4.LabelProp = Mono.Unix.Catalog.GetString("<b>Translated Text</b>");
             this.GtkLabel4.UseMarkup = true;
