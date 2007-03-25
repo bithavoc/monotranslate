@@ -24,6 +24,8 @@ namespace MonoTranslate.Interfaces
 {
 	public interface ITranslator
 	{
-		string TranslateText(string text, string langPair);
+		string TranslateText(
+		                     string text, 
+		                     string langPair);
 	}
 }
