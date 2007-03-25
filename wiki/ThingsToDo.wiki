@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary Thing to do in MonoTranslate
 #labels Phase-Requirements
 
 Deployment:
