@@ -69,7 +69,13 @@ namespace MonoTranslateGtk
 	//Init engine instance and values.
 	private void initEngine()
 	{
-		this.engine = new TranslatorEngine();
+		string val = System.Configuration.ConfigurationManager.AppSettings["engineConfig"];
+		if(string.IsNullOrEmpty(val))
+			   MainClass.showMessage(this,"Xml Configuration file missing.");
+			
+		this.engine = new TranslatorEngine(val);
+			
+		this.engine.SetConfigFile(val);
 		initEngineUI();
 	}
 	private static void prepareComboBox(ComboBoxEntry cmb)
