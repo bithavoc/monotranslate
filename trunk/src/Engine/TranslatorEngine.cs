@@ -33,10 +33,9 @@ namespace MonoTranslate.Engine
 		private IDictionary langpairs;
 		private string configFile;
 
-		public TranslatorEngine()
+		public TranslatorEngine() : this(null)
 		{
-			langpairs = new Hashtable();
-			LoadLangPairs();
+			
 		}	
 			
 		public TranslatorEngine(string confFile)
