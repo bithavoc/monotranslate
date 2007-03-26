@@ -29,6 +29,10 @@ using System.Text.RegularExpressions;
 
 namespace MonoTranslate.Translator
 {
+	/*
+	 * Class BabelfishTranslator
+	 * This class extends from AbstractTranslator and uses Babelfish translation
+  	 */
 	public class BabelfishTranslator : AbstractTranslator
 	{
 		public BabelfishTranslator()

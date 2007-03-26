@@ -23,9 +23,18 @@ using MonoTranslate.Interfaces;
 
 namespace MonoTranslate.Translator
 {
+	/*
+	 * Class TranslatorFactoy
+	 * This class implements the Factory pattern.
+	 * It is used by TranslatorEngine to get the requested translator.
+	 */
 	public class TranslatorFactoy
 	{
 	
+		/*
+		 * This functions return the translator that corrsponds to the given
+		 * parameter.
+		 */
 		public static ITranslator GetTranslator(string translator)
 		{
 			ITranslator t = null;

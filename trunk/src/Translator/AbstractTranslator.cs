@@ -28,14 +28,25 @@ using MonoTranslate.Interfaces;
 
 namespace MonoTranslate.Translator
 {
+    /*
+     * Abstract Class AbstractTranslator
+     * This class implements ITranslator. All translators class will derive
+     * from this one.
+	 */
 	public abstract class AbstractTranslator : ITranslator 
 	{
 	
+		//The request object that comunicates with the server
 		protected WebRequest request;
+		//The object that sends data to the server
 		protected Stream dataStream;
 
 		public abstract string TranslateText(string text, string langPair);
 		
+		/*
+		 * This function parses the content returned by the translator and returns
+		 * the translated text.
+		 */
 		protected abstract string GetTranslatedText(string serverResponse);
 
 	}

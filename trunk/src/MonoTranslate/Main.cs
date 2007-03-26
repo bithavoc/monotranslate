@@ -20,7 +20,6 @@
 */
 
 using System;
-using System.Text.RegularExpressions;
 using MonoTranslate.Engine;
 using System.Windows.Forms;
 
@@ -29,7 +28,18 @@ public class MainClass
 {
 	public static void Main(string[] args)
 	{
-		TranslatorEngine t = new TranslatorEngine("config.xml");
-		Application.Run(new MainWindow(t));		
+		try
+		{	
+			TranslatorEngine t = new TranslatorEngine("config.xml");
+			Application.Run(new MainWindow(t));
+		}
+		catch (System.NullReferenceException e)
+		{
+			MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK , MessageBoxIcon.Error);
+		}
+		catch (System.IO.FileNotFoundException e1)
+		{
+			MessageBox.Show(e1.Message, "Error", MessageBoxButtons.OK , MessageBoxIcon.Error);
+		}
 	}
 }

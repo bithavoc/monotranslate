@@ -33,9 +33,9 @@ namespace MonoTranslate.Engine
 		private IDictionary langpairs;
 		private string configFile;
 
-		public TranslatorEngine() : this(null)
+		public TranslatorEngine() 
 		{
-			
+			langpairs = new Hashtable();
 		}	
 			
 		public TranslatorEngine(string confFile)
@@ -79,6 +79,7 @@ namespace MonoTranslate.Engine
 		public void SetConfigFile(string confFile)
 		{
 			configFile = confFile;
+			LoadLangPairs();
 		}
 
 		public string GetConfigFile()
@@ -86,10 +87,13 @@ namespace MonoTranslate.Engine
 			return configFile;
 		}		
 		
-		void checkConfigFile()
+		private void checkConfigFile()
 		{
-			if(string.IsNullOrEmpty(GetConfigFile()))
-				throw new System.NullReferenceException("The Engine Configuration file is empty or null");
+			//if(string.IsNullOrEmpty(GetConfigFile()))
+			if (GetConfigFile() == null)
+				throw new System.NullReferenceException("The Engine configuration file is empty or null");
+			if (!System.IO.File.Exists(GetConfigFile()))
+				throw new System.IO.FileNotFoundException("Engine configuration file could not be loaded");				
 		}
 						
 		private void LoadLangPairs()
@@ -121,16 +125,7 @@ namespace MonoTranslate.Engine
 				
 				langpairs.Add(name, lp);
 			}
-			/*IDictionaryEnumerator o = langpairs.GetEnumerator();
-			while (o.MoveNext())
-			{
-				System.Console.WriteLine(o.Key);
-				IDictionaryEnumerator ot = ((IDictionary)o.Value).GetEnumerator();
-				while (ot.MoveNext())
-				{
-					System.Console.WriteLine(ot.Key + " " + ot.Value);					
-				}
-			}*/
+
 		}
 		
 	}

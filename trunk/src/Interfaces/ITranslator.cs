@@ -24,8 +24,11 @@ namespace MonoTranslate.Interfaces
 {
 	public interface ITranslator
 	{
-		string TranslateText(
-		                     string text, 
-		                     string langPair);
+		/*
+		 * This function must be implemented by all the translator that the
+		 * system will use. The function recives the text to translate and
+		 * the language pair to translate and returns the translated text.
+		 */
+		string TranslateText(string text, string langPair);
 	}
 }
