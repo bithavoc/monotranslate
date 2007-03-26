@@ -1,4 +1,4 @@
-#summary Future
+#summary Future Plans for MonoTranslate
 
 = MonoTranslate Next =
 
