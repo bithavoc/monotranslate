@@ -5,6 +5,7 @@ Deployment:
  * *.deb* Deployment Package (High,thepumpkin1979)
  * *.rpm* Deployment Package (High,gabitoju)
  * Windows Installer or Nullsoft Installer (High,jabitoju)
+ * Official Logo
 
 Development:
  * Windows Notify Icon (High,gabitoju)
