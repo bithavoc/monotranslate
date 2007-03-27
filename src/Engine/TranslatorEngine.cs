@@ -27,29 +27,42 @@ using MonoTranslate.Interfaces;
 
 namespace MonoTranslate.Engine
 {
+
+	/*
+	 * Class TranslatorEngine
+	 * This class implements the Facade pattern.
+	 * It is the entry point to the system. It is designed in a way that all call are done by this
+	 * class, so there is less connection between the UI and the translators.
+	 */
 	public class TranslatorEngine
 	{
 	
-		private IDictionary langpairs;
-		private string configFile;
+		private IDictionary langpairs; //match between the lang pair and the service code (Spanish to English = es_en)
+		private string configFile; //the configuration file path and name
+		private IList results; //the list of translations results
 
 		public TranslatorEngine() 
 		{
 			langpairs = new Hashtable();
+			results = new ArrayList();
 		}	
 			
 		public TranslatorEngine(string confFile)
 		{
 			langpairs = new Hashtable();
 			configFile = confFile;
+			results = new ArrayList();
 			LoadLangPairs();
 		}
 		
 		public string Translate(string text, string langpair, string translator)
 		{
+			Result r = null;
 			ITranslator t = TranslatorFactoy.GetTranslator(translator);
 			string val = (string)((IDictionary)langpairs[translator])[langpair];
 			string ret = t.TranslateText(text, val);
+			r = new Result(text, ret, translator, langpair);
+			results.Add(r);
 			return ret;
 		}
 		
@@ -74,6 +87,11 @@ namespace MonoTranslate.Engine
 				ret.Add(o.Key);
 			}			
 			return ret;
+		}
+		
+		public IList GetResults()
+		{
+			return results;
 		}
 		
 		public void SetConfigFile(string confFile)
