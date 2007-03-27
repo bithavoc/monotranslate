@@ -41,5 +41,10 @@ public class MainClass
 		{
 			MessageBox.Show(e1.Message, "Error", MessageBoxButtons.OK , MessageBoxIcon.Error);
 		}
+		catch (Exception e2)
+		{
+			MessageBox.Show("An unhandled exception has occurred.\nPlease, post the next message in http://code.google.com/p/monotranslate/issues/list\n"+e2.Message, 
+                    			"Error", MessageBoxButtons.OK , MessageBoxIcon.Error);
+		}
 	}
 }
