@@ -45,6 +45,8 @@ namespace MonoTranslate.Engine
 		{
 			langpairs = new Hashtable();
 			results = new ArrayList();
+			LoadHistory l = new LoadHistory();
+			results = l.Load();
 		}	
 			
 		public TranslatorEngine(string confFile)
@@ -53,6 +55,8 @@ namespace MonoTranslate.Engine
 			configFile = confFile;
 			results = new ArrayList();
 			LoadLangPairs();
+			LoadHistory l = new LoadHistory();
+			results = l.Load();			
 		}
 		
 		public string Translate(string text, string langpair, string translator)
@@ -65,7 +69,6 @@ namespace MonoTranslate.Engine
 			results.Add(r);
 			WriteHistory w = WriteHistory.GetInstance();
 			w.WriteToHistory(r);
-			w.Close();
 			return ret;
 		}
 		

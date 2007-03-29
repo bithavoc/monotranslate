@@ -27,6 +27,12 @@ using System.IO.IsolatedStorage;
 
 namespace MonoTranslate.Engine
 {
+	/*
+	 * Class WriteHistory
+	 * This class writes the user translation history to a local file.
+	 * Each user will have its own history file.
+	 * This class implements the Singleton pattern.
+	 */
 	public class WriteHistory
 	{
 		private IsolatedStorageFileStream history;
@@ -35,8 +41,9 @@ namespace MonoTranslate.Engine
 		
 		private WriteHistory()
 		{
-			history = new IsolatedStorageFileStream("mts-history.mts", FileMode.Create);
+			history = new IsolatedStorageFileStream("mts-history.mts", FileMode.Append);
 			writer = new StreamWriter(history);
+			writer.AutoFlush = true;
 		}
 		
 		public static WriteHistory GetInstance()
@@ -52,8 +59,6 @@ namespace MonoTranslate.Engine
 			line += ":" + r.GetTranslatedText();
 			line += ":" + r.GetTranslator();
 			line += ":" + r.GetLanguage();
-			Console.WriteLine(Environment.SpecialFolder.ApplicationData);
-			Console.WriteLine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData));
 			writer.WriteLine(line);			
 		}
 		
