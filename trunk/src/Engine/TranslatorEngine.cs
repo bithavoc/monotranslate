@@ -63,6 +63,9 @@ namespace MonoTranslate.Engine
 			string ret = t.TranslateText(text, val);
 			r = new Result(text, ret, translator, langpair);
 			results.Add(r);
+			WriteHistory w = WriteHistory.GetInstance();
+			w.WriteToHistory(r);
+			w.Close();
 			return ret;
 		}
 		

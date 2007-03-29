@@ -1,32 +1,16 @@
-<Combine name="Translator" fileversion="2.0" outputpath="./build/bin/">
-  <Configurations active="Release">
+<Combine name="Translator" fileversion="2.0">
+  <Configurations active="Debug">
     <Configuration name="Debug" ctype="CombineConfiguration">
-      <Entry build="True" name="Translator" configuration="Debug" />
-      <Entry build="True" name="MonoTranslate" configuration="Debug" />
-      <Entry build="True" name="Interfaces" configuration="Debug" />
-      <Entry build="True" name="Engine" configuration="Debug" />
-      <Entry build="True" name="MonoTranslateGtk" configuration="Debug" />
+      <Entry configuration="Debug" build="True" name="Translator" />
     </Configuration>
     <Configuration name="Release" ctype="CombineConfiguration">
-      <Entry build="True" name="Translator" configuration="Debug" />
-      <Entry build="True" name="MonoTranslate" configuration="Debug" />
-      <Entry build="True" name="Interfaces" configuration="Debug" />
-      <Entry build="True" name="Engine" configuration="Debug" />
-      <Entry build="True" name="MonoTranslateGtk" configuration="Release" />
+      <Entry configuration="Debug" build="True" name="Translator" />
     </Configuration>
   </Configurations>
-  <StartMode startupentry="MonoTranslateGtk" single="True">
+  <StartMode startupentry="Translator" single="True">
     <Execute type="None" entry="Translator" />
-    <Execute type="None" entry="MonoTranslate" />
-    <Execute type="None" entry="Interfaces" />
-    <Execute type="None" entry="Engine" />
-    <Execute type="None" entry="MonoTranslateGtk" />
   </StartMode>
   <Entries>
     <Entry filename="./Translator.mdp" />
-    <Entry filename="../MonoTranslate/MonoTranslate.mdp" />
-    <Entry filename="../Interfaces/Interfaces.mdp" />
-    <Entry filename="../Engine/Engine.mdp" />
-    <Entry filename="../MonoTranslateGtk/MonoTranslateGtk.mdp" />
   </Entries>
 </Combine>
