@@ -62,13 +62,21 @@ namespace MonoTranslate.Engine
 		public string Translate(string text, string langpair, string translator)
 		{
 			Result r = null;
-			ITranslator t = TranslatorFactoy.GetTranslator(translator);
-			string val = (string)((IDictionary)langpairs[translator])[langpair];
-			string ret = t.TranslateText(text, val);
-			r = new Result(text, ret, translator, langpair);
-			results.Add(r);
-			WriteHistory w = WriteHistory.GetInstance();
-			w.WriteToHistory(r);
+			string ret = "";
+			r = SearchTranslationInHistory(text, langpair, translator);
+			
+			if (r == null)
+			{ 
+				ITranslator t = TranslatorFactoy.GetTranslator(translator);
+				string val = (string)((IDictionary)langpairs[translator])[langpair];
+				ret = t.TranslateText(text, val);
+				r = new Result(text, ret, translator, langpair);
+				results.Add(r);
+				WriteHistory w = WriteHistory.GetInstance();
+				w.WriteToHistory(r);
+			}
+			else
+				ret  = r.GetTranslatedText();
 			return ret;
 		}
 		
@@ -151,6 +159,21 @@ namespace MonoTranslate.Engine
 			}
 
 		}
+		
+		private Result SearchTranslationInHistory(string text, string langpair, string translator)
+		{
+			if (results.Count != 0)
+			{
+				IEnumerator e = results.GetEnumerator();
+				while (e.MoveNext())
+				{
+					Result r = (Result)e.Current;
+					if (r.GetOriginalText() == text && r.GetLanguage() == langpair && r.GetTranslator() == translator)
+						return r;
+				}
+			}
+			return null;
+		} 
 		
 	}
 }
